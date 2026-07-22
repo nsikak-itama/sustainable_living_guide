@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "741435443869",
+    "project_id": "sustainable-living-guide-b77d1",
+    "storage_bucket": "sustainable-living-guide-b77d1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741435443869:android:87d60b40e273e14a61e274",
+        "android_client_info": {
+          "package_name": "com.nsikak.sustainablelivingguide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Wj58MiEnPP9BFIwcwAA4mfNsAJatD8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
