@@ -12,7 +12,11 @@ import 'features/challenges/view/challenges_screen.dart';
 import 'features/waste_tracker/view/waste_tracker_screen.dart';
 import 'features/certifications/view/certifications_screen.dart';
 import 'features/recipes/view/recipes_screen.dart';
-
+import 'features/energy_tips/view/energy_tips_screen.dart';
+import 'features/travel_tips/view/travel_tips_screen.dart';
+import 'features/community/view/community_screen.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'features/education/view/education_screen.dart';
 
 
 Future<void> main() async {
@@ -24,6 +28,11 @@ Future<void> main() async {
   // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  await Supabase.initialize(
+    url: dotenv.env['SUPABASE_URL']!,
+    anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
 
   runApp(
@@ -157,6 +166,42 @@ class _PlaceholderHomeScreen extends ConsumerWidget {
       },
       child: const Text('Open Recipes'),
       ),
+
+      ElevatedButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const EnergyTipsScreen()),
+          );
+        },
+        child: const Text('Open Energy Tips'),
+      ),
+
+      ElevatedButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const TravelTipsScreen()),
+          );
+        },
+          child: const Text('Open Travel Tips'),
+      ),
+      const SizedBox(height: 16),
+      ElevatedButton(
+  onPressed: () {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => const CommunityScreen()),
+    );
+  },
+  child: const Text('Open Community'),
+  ),
+const SizedBox(height: 16),
+const SizedBox(height: 12),
+ElevatedButton(
+  onPressed: () => Navigator.push(
+    context,
+    MaterialPageRoute(builder: (_) => const EducationScreen()),
+  ),
+  child: const Text('Open Educational Content'),
+),
       
     ],
   ),
